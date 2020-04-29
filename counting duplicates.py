@@ -1,16 +1,16 @@
-x = 0
 def duplicate_count(text):
-    x = 0
+    i = 0
+    new_list = []
+    repetidas = []
     for letra in text:
-        #print(letra)
-        i = 0
-        for segundaletra in text:
-            #print(segundaletra)
-            if letra == segundaletra:
-                i = i + 1
-            if i > 1 and x < 1:
-                x = x + 1
+        if letra.lower() not in new_list:
+            new_list.append(letra.lower())
+        else:
+           repetidas.append(letra.lower()) 
 
-    return x
-print (x)
-print(duplicate_count("indivisibility"))  
+    for letra in new_list:           
+        if letra.lower() in repetidas:
+            i = i + 1
+
+    return i
+print(duplicate_count("Indivisibilities"))  
